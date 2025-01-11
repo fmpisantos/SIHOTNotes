@@ -1,0 +1,26 @@
+<DoorLock>
+    <ZOOM1>1</ZOOM1>
+    <KEYZOOM1>1</KEYZOOM1>
+    <NC>1</NC>
+    <CA>1</CA>
+    <AP></AP>
+    <DCO>1</DCO>
+    <CS>0</CS>
+    <ARR>2024-10-07T15:55:00</ARR>
+    <DEP>2024-10-10T12:00:00</DEP>
+    <OC>CC</OC>
+    <HN>1</HN>
+    <USERID>fs</USERID>
+    <WS>PT-FMSANTOS-01</WS>
+    <SERVERNAME>localhost</SERVERNAME>
+    <SERVERID>CBS_CMD</SERVERID>
+    <PCIID>11043</PCIID>
+    <AN>256501</AN>
+    <SN>Santos</SN>
+    <CN>Filipe</CN>
+    <TG></TG>
+    <EMAIL></EMAIL>
+    <MOBILE></MOBILE>
+    <RN>200</RN>
+    <CIO>I</CIO>
+</DoorLock>

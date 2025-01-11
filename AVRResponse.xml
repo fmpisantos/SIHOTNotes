@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<SIHOT-Document>
+    <SIHOT-Version>
+        <Version>9.0.0.0000</Version>
+        <EXE>D:\\sihot\\sinetres.exe</EXE>
+    </SIHOT-Version>
+    <OC>AV</OC>
+    <ID>1</ID>
+    <TN>123</TN>
+    <RC>0</RC>
+    <AAVLIST>
+        <ID>1</ID>
+        <AVAILABLE>
+            <CAT>DR</CAT>
+            <ISBED>N</ISBED>
+            <ORDER>2</ORDER>
+            <TXT>
+                <LANG>DE</LANG>
+                <T>Doppelzimmer</T>
+                <DESC/>
+            </TXT>
+            <TXT>
+                <LANG>EN</LANG>
+                <T>Double Room</T>
+                <DESC>Double room with king size beds</DESC>
+            </TXT>
+            <AV>
+                <D>2012-10-10</D>
+                <NO>33</NO>
+                <NOOVB>33</NOOVB>
+            </AV>
+            <AV>
+                <D>2012-10-11</D>
+                <NO>33</NO>
+                <NOOVB>33</NOOVB>
+            </AV>
+        </AVAILABLE>
+        <AVAILABLE>
+            <CAT>SR</CAT>
+            <ISBED>N</ISBED>
+            <ORDER>1</ORDER>
+            <TXT>
+                <LANG>DE</LANG>
+                <T>Einzelzimmer</T>
+                <DESC/>
+            </TXT>
+            <TXT>
+                <LANG>EN</LANG>
+                <T>Single Room</T>
+                <DESC/>
+            </TXT>
+            <AV>
+                <D>2012-10-10</D>
+                <NO>20</NO>
+                <NOOVB>20</NOOVB>
+            </AV>
+            <AV>
+                <D>2012-10-11</D>
+                <NO>20</NO>
+                <NOOVB>20</NOOVB>
+            </AV>
+        </AVAILABLE>
+    </AAVLIST>
+</SIHOT-Document>

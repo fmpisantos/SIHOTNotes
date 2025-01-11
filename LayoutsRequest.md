@@ -1,0 +1,14 @@
+# Layouts
+- [ ] Phone number sms confirmation
+- [ ] Appointments screen (past and future)
+- [ ] Establishment screen
+    - [ ] Selection of services from an establishment
+    - [ ] Employee selection
+    - [ ] Schedule/time picker
+    - [ ] Cart/Price preview modal to validate and confirm reservation
+- [ ] Profile/Settings
+    - [ ] Change name
+    - [ ] Change phone number
+    - [ ] Show if locaiton services are active or not
+    - [ ] Show if notifications are active or not
+- [ ] Notification screen/list

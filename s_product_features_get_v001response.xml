@@ -1,0 +1,26 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <SOAP-ENV:Body>
+      <S_PRODUCT_FEATURES_GET_V001Response xmlns="http://www.gubse.com/IFS/SihotServices01.xsd">
+         <Result>
+            <Success>true</Success>
+            <ErrorMsg/>
+            <MSG-LIST/>
+         </Result>
+         <PRODUCT-FEATURES>
+            <product>SIHOT.MOBILE</product>
+            <FEATURES>
+               <FEATURE>
+                  <id>70</id>
+                  <name>Individual rooms-to-clean list</name>
+                  <isenabled>1</isenabled>
+               </FEATURE>
+               <FEATURE>
+                  <id>isldap</id>
+                  <name>NO KEY</name>
+                  <isenabled>0</isenabled>
+               </FEATURE>
+            </FEATURES>
+         </PRODUCT-FEATURES>
+      </S_PRODUCT_FEATURES_GET_V001Response>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

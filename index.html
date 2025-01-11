@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send POST Request</title>
+</head>
+
+<body>
+    <h1>Send POST Request</h1>
+    <button id="sendRequestBtn">Send Request</button>
+    <p id="responseText"></p>
+
+    <script>
+        document.getElementById('sendRequestBtn').addEventListener('click', sendRequest);
+
+        function sendRequest() {
+            const url =
+                'https://wallet.sihot.com/v1/google/guestpass?data=0KJXQPwHQv6gzRFRj52n20vwpS%2f6k44NgPCCZwXkLvm8hlPQeEY8VcI4D8cxlV%2bJY8kXq8p%2bLsxtxqtSU76OSwFly9iuNaMpvIIcq9I5e4%2bIQe3SnVFEUZxjJLVnmxQ8whuGpeAp8JDmh1%2flUiK5Oks1Wj8kqhjbmRB5ty2nTHuTc1CNXFxcMYCNDjkBlZYuOw0fh56OZyTTE35RWeQsHEHpmuJfkTizM%2bFqH9NPqthB3T2kGHJcXDqSdTiZpj5EnT2HXjrRzDq%2fDtcnVVwwAu%2bJkweivDFUl3WGtQnoWqZpnqDVKfExO45T2ojnhHs2frN%2b6gIlIyTpUofXVnfFcwiAJZEOac5J8THeaSNEQ%2bjWXjJt%2fRncSsTrSM9qAd9oXsrBJQ%3d%3d';
+
+            fetch(url, {
+                method: 'GET'
+            })
+        }
+    </script>
+</body>
+
+</html>

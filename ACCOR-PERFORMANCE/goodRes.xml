@@ -1,0 +1,831 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <SOAP-ENV:Body>
+      <S_RESERVATION_GET_V007Response xmlns="http://www.gubse.com/IFS/SihotServices01.xsd">
+         <Result>
+            <Success>true</Success>
+            <ErrorMsg/>
+            <PerformanceLog><![CDATA[context: SIF_CrossbowServer::doProcessService() :- InventoryID = 'SihotServices01', got soap-msg '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sih="http://www.gubse.com/IFS/SihotServices01.xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sih:S_RESERVATION_GET_V007Request>
+         <!--Optional:-->
+         <sih:TransactionID></sih:TransactionID>
+         <sih:Authentication>
+            <sih:SecurityID></sih:SecurityID>
+         </sih:Authentication>
+         <sih:RESERVATION>
+            <sih:RESERVATION-OBJID>356498</sih:RESERVATION-OBJID>
+         </sih:RESERVATION>
+      </sih:S_RESERVATION_GET_V007Request>
+   </soapenv:Body>
+</soapenv:Envelope>'
+trace duration: 2524.8879ms, cpu usage 1031.25ms (609.375ms user, 421.875ms kernel, 1493.6379ms wait, SDB 2364.8001ms, XML 3.2463ms) @PT-FMSANTOS-01 [2024-09-06T12:13:41,992]
+system cpu usage: overall 2.9912% (1.8051% user, 1.1862% kernel)
+trace info: 2786 calls, trace overhead (real time) 0.576384 milliseconds (0,206886 microseconds/call), time to generate trace info: 4.4631ms.
+   real time   /Co%/ n calls / time per call  / max per call  / stralloc/class::method - section
+      2.524,680/100/        1/   2.524,680130[   2.524,680130]/        0 SIF_CrossbowServer::doProcessService
+      2.491,524/100/        1/   2.491,524208[   2.491,524208]/    37531 +---ServiceInstance::getOutput
+      2.221,188/100/        1/   2.221,187593[   2.221,187593]/      927 |   +---preAccess(BO_RES,cancellationdate)
+      2.201,602/   /        2/   1.100,801231[   2.201,599595]/      671 |   |   |   S_DB<reshis>::setKey()
+         16,794/   /        1/      16,793797[      16,793797]/        0 |   |   |   S_DB<reshis>::lastRow()
+          1,789/   /        1/       1,789463[       1,789463]/        0 |   |   +---S_DB<reshis>::last()
+        137,427/ 87/       10/      13,742650[      15,084827]/    27473 |   +---BO_Base::relation(BO_PERSON,packages,0) {10 objects}
+         73,784/ 87/       20/       3,689175[       5,443605]/    14620 |   |   +---S_Fixleistung::getPreisVonBis1()
+         49,290/ 98/       60/       0,821502[       1,930693]/     9010 |   |   |   +---A_Preis::calculateEX1
+         48,304/ 79/       60/       0,805074[       1,913523]/     8270 |   |   |   |   +---A_Preis::doCalculateEX1
+         19,578/ 12/       60/       0,326301[       0,799518]/     3220 |   |   |   |   |   +---A_Preis::taxenUndProvUms
+          2,430/ 63/       40/       0,060749[       0,082343]/      360 |   |   |   |   |   |   +---A_Preis::calculateEX1
+          1,531/   /       40/       0,038285[       0,060488]/      280 |   |   |   |   |   |   |   +---A_Preis::doCalculateEX1
+         18,760/ 97/       60/       0,312674[       0,963144]/     3170 |   |   |   |   |   +---A_Preis::calculateEX1
+         18,145/ 76/       60/       0,302414[       0,953225]/     2990 |   |   |   |   |   |   +---A_Preis::doCalculateEX1
+         12,458/ 10/       60/       0,207634[       0,813283]/     1880 |   |   |   |   |   |   |   +---A_Preis::taxenUndProvUms
+          1,256/ 63/       20/       0,062820[       0,083829]/      180 |   |   |   |   |   |   |   |   +---A_Preis::calculateEX1
+          0,795/   /       20/       0,039753[       0,061715]/      140 |   |   |   |   |   |   |   |   |   +---A_Preis::doCalculateEX1
+          1,359/   /       30/       0,045289[       0,076012]/        0 |   |   |   |   |   |   |   +---S_DB<prefix>::first(S_Bool)
+         13,147/ 72/       60/       0,219119[       0,282475]/     2790 |   |   |   +---A_Reservierung::allePersonen
+          3,967/   /       60/       0,066119[       0,121116]/        0 |   |   |   |   |   S_DB<grp>::setBestKey()
+          2,077/   /       60/       0,034616[       0,065722]/        0 |   |   |   |   |   S_DB<grp>::first(S_Bool)
+          1,769/   /      120/       0,014740[       0,026644]/     1800 |   |   |   |   |   S_DB<grp>::read()
+          1,713/   /      120/       0,014271[       0,026347]/        0 |   |   |   |   +---S_DB<grp>::next()
+          1,186/   /       30/       0,039547[       0,042758]/      240 |   |   |   |   S_DB<grp>::seek()
+          0,549/   /       30/       0,018305[       0,021070]/      750 |   |   |   +---S_DB<grp>::read()
+         30,566/ 98/       20/       1,528276[       2,045397]/     5710 |   |   +---A_Preis::calculateEX1
+         29,959/ 89/       20/       1,497964[       2,028336]/     5450 |   |   |   +---A_Preis::doCalculateEX1
+         15,807/ 16/       20/       0,790371[       0,865266]/     2860 |   |   |   |   +---A_Preis::taxenUndProvUms
+          2,464/ 63/       40/       0,061605[       0,087038]/      360 |   |   |   |   |   +---A_Preis::calculateEX1
+          1,557/   /       40/       0,038933[       0,065444]/      280 |   |   |   |   |   |   +---A_Preis::doCalculateEX1
+         10,788/ 98/       20/       0,539405[       1,007689]/     1950 |   |   |   |   +---A_Preis::calculateEX1
+         10,586/ 86/       20/       0,529316[       0,997540]/     1890 |   |   |   |   |   +---A_Preis::doCalculateEX1
+          8,582/ 14/       20/       0,429090[       0,835789]/     1520 |   |   |   |   |   |   +---A_Preis::taxenUndProvUms
+          1,238/ 64/       20/       0,061894[       0,093198]/      180 |   |   |   |   |   |   |   +---A_Preis::calculateEX1
+          0,787/   /       20/       0,039336[       0,071532]/      140 |   |   |   |   |   |   |   |   +---A_Preis::doCalculateEX1
+          0,505/   /       10/       0,050522[       0,059053]/        0 |   |   |   |   |   |   +---S_DB<prefix>::first(S_Bool)
+          5,911/ 46/       10/       0,591103[       0,627836]/     2190 |   |   +---A_Leistung::set(const S_LstNr &lstnr, const A_Person *per)
+          0,731/   /       10/       0,073075[       0,085901]/        0 |   |   |   |   S_DB<gst>::seekObj()
+          0,612/   /       10/       0,061235[       0,063984]/      450 |   |   |   |   S_DB<res>::read()
+          0,514/   /       10/       0,051367[       0,058455]/      310 |   |   |   |   S_DB<res>::seek()
+          0,462/   /       10/       0,046217[       0,051009]/      350 |   |   |   |   S_DB<gst>::read()
+          0,398/   /       10/       0,039834[       0,047948]/      380 |   |   |   +---S_DB<gst>::reDecode()
+          4,267/ 74/       20/       0,213354[       0,272099]/      875 |   |   +---A_Reservierung::allePersonen
+          1,306/   /       20/       0,065315[       0,075014]/        0 |   |   |   |   S_DB<grp>::setBestKey()
+          0,720/   /       20/       0,035995[       0,050617]/        0 |   |   |   |   S_DB<grp>::first(S_Bool)
+          0,585/   /       40/       0,014628[       0,021243]/      600 |   |   |   |   S_DB<grp>::read()
+          0,564/   /       40/       0,014090[       0,025385]/        0 |   |   |   +---S_DB<grp>::next()
+          0,908/   /       10/       0,090753[       0,099448]/        0 |   |   |   S_DB<rgpo>::setBestKey()
+          0,833/   /       20/       0,041651[       0,056786]/      160 |   |   |   S_DB<grp>::seek()
+          0,680/   /       10/       0,067969[       0,072764]/        0 |   |   |   S_DB<gst>::seekObj()
+          0,654/   /       10/       0,065447[       0,261112]/        0 |   |   |   S_DB<rgpo>::next()
+          0,478/   /       10/       0,047828[       0,051756]/        0 |   |   |   S_DB<rgpo>::first(S_Bool)
+          0,410/   /       10/       0,041036[       0,047620]/      210 |   |   |   S_DB<gst>::read()
+          0,382/   /       20/       0,019095[       0,023702]/      500 |   |   |   S_DB<grp>::read()
+          0,328/   /       10/       0,032823[       0,037509]/      240 |   |   +---S_DB<gst>::reDecode()
+         69,174/ 96/        1/      69,173833[      69,173833]/     4242 |   +---BO_Base::relation(BO_RES,packages,0) {1 objects}
+         37,554/ 99/        2/      18,777103[      34,891825]/     1550 |   |   +---A_Preis::calculateEX1
+         37,319/ 96/        2/      18,659527[      34,672640]/     1505 |   |   |   +---A_Preis::doCalculateEX1
+         19,021/100/        2/       9,510601[      17,814831]/      407 |   |   |   |   +---A_Preis::calculateEX1
+         18,999/ 94/        2/       9,499730[      17,803112]/      401 |   |   |   |   |   +---A_Preis::doCalculateEX1
+          6,003/   /        8/       0,750356[       5,556691]/        0 |   |   |   |   |   |   |   S_DB<pre2>::next()
+          5,853/   /        1/       5,852762[       5,852762]/        0 |   |   |   |   |   |   |   S_DB<pre2>::first(S_Bool)
+          4,350/   /        2/       2,174958[       4,281783]/        0 |   |   |   |   |   |   |   S_DB<prefix>::first(S_Bool)
+          1,672/ 16/        2/       0,835775[       0,896642]/      270 |   |   |   |   |   |   +---A_Preis::taxenUndProvUms
+          0,266/   /        4/       0,066475[       0,095623]/       36 |   |   |   |   |   |   |   +---A_Preis::calculateEX1
+         16,892/ 86/        2/       8,445952[      16,110514]/      663 |   |   |   |   +---A_Preis::taxenUndProvUms
+         11,556/   /        1/      11,556230[      11,556230]/        0 |   |   |   |   |   |   S_DB<stka>::first(S_Bool)
+          2,654/   /       23/       0,115411[       2,103673]/        0 |   |   |   |   |   |   S_DB<stka>::next()
+          0,277/   /        4/       0,069254[       0,103236]/       36 |   |   |   |   |   +---A_Preis::calculateEX1
+          9,703/   /        1/       9,703043[       9,703043]/        0 |   |   |   S_DB<lsttxt>::first(S_Bool)
+          9,628/ 96/        2/       4,814187[       6,260249]/     2272 |   |   +---S_Fixleistung::getPreisVonBis1()
+          9,257/ 99/        6/       1,542911[       2,581886]/     2188 |   |   |   +---A_Preis::calculateEX1
+          9,159/ 74/        6/       1,526446[       2,566388]/     2114 |   |   |   |   +---A_Preis::doCalculateEX1
+          4,426/ 99/        6/       0,737659[       1,255165]/      864 |   |   |   |   |   +---A_Preis::calculateEX1
+          4,365/ 61/        6/       0,727447[       1,244979]/      846 |   |   |   |   |   |   +---A_Preis::doCalculateEX1
+          2,000/   /        6/       0,333408[       0,838595]/      306 |   |   |   |   |   |   |   |   A_Preis::taxenUndProvUms
+          0,393/   /        6/       0,065471[       0,066511]/        0 |   |   |   |   |   |   |   |   S_DB<gst>::seekObj()
+          0,277/   /        6/       0,046156[       0,055689]/        0 |   |   |   |   |   |   |   +---S_DB<prefix>::first(S_Bool)
+          1,969/   /        6/       0,328090[       0,779090]/      306 |   |   |   |   |   |   A_Preis::taxenUndProvUms
+          0,403/   /        6/       0,067231[       0,073660]/        0 |   |   |   |   |   +---S_DB<gst>::seekObj()
+          9,177/   /        1/       9,177085[       9,177085]/        0 |   |   +---S_DB<rgpo>::first(S_Bool)
+         14,156/ 96/        1/      14,156167[      14,156167]/      166 |   +---BO_Base::relation(BO_RES,orderer,0) {1 objects}
+         13,560/   /        1/      13,559538[      13,559538]/        0 |   |   +---S_DB<gst>::seekObj()
+         12,708/100/        1/      12,708144[      12,708143]/      245 |   +---preAccess(BO_RES,forecastrategross)
+         12,698/ 96/        1/      12,697868[      12,697868]/      245 |   |   +---BO_ResBase::getRateForecast
+         12,198/ 97/        1/      12,198028[      12,198028]/      164 |   |   |   +---A_PreCalcData::getReservierungsInfo(dataObject&, const retrieveMask, long, const S_ObjID&, const S_Date&, const S_Date&)
+         11,055/   /        6/       1,842542[      10,530453]/        0 |   |   |   |   |   S_DB<precalcdata>::first(S_Bool)
+          0,809/   /       29/       0,027892[       0,076933]/        0 |   |   |   |   +---S_DB<precalcdata>::next()
+          8,400/ 93/        1/       8,399506[       8,399506]/      268 |   +---preAccess(BO_RES,forecastnoofadults)
+          7,828/ 91/        1/       7,827957[       7,827956]/      197 |   |   +---A_Reservierung::allePersonen
+          6,253/   /        1/       6,253272[       6,253272]/        0 |   |   |   |   S_DB<grp>::first(S_Bool)
+          0,881/   /       10/       0,088063[       0,222049]/        0 |   |   |   +---S_DB<grp>::next()
+          7,532/ 86/        2/       3,766144[       7,541923]/     1716 |   +---BO_Base::relation(BO_RES,namelistGrouped,0) {5 objects}
+          5,762/ 62/        5/       1,152370[       1,268840]/     1480 |   |   +---BO_NamelistGroup::loadFromObject()
+          2,651/ 20/       10/       0,265053[       0,309586]/     1150 |   |   |   +---BO_Person::loadFromObject( const S_Grp &_grp, S_Bool _isDummy /* = S_False */ )
+          0,517/   /       10/       0,051731[       0,097571]/      200 |   |   |   |   +---BO_Person::loadFromObject() Block2
+          0,577/   /        5/       0,115439[       0,126010]/       85 |   |   |   |   BO_Res::loadFromObject()
+          0,324/   /       10/       0,032416[       0,050499]/        0 |   |   |   +---BO_NamelistGroup::loadFromObject() if ( g.objID.valid() )
+          0,729/   /        1/       0,728517[       0,728517]/      197 |   |   +---A_Reservierung::allePersonen
+          5,180/ 44/       10/       0,517964[       0,560568]/     1610 |   +---BO_Base::relation(BO_PERSON,getRegistrationCard,0) {10 objects}
+          1,015/   /       20/       0,050765[       0,098812]/        0 |   |   |   S_DB<blobhead>::first(S_Bool)
+          0,658/   /       10/       0,065761[       0,075579]/      450 |   |   |   S_DB<res>::read()
+          0,622/   /       10/       0,062208[       0,078443]/      310 |   |   +---S_DB<res>::seek()
+          2,555/ 84/        1/       2,555458[       2,555458]/      198 |   +---BO_Base::relation(BO_RES,travelAgency,0) {1 objects}
+          2,142/   /        1/       2,142247[       2,142247]/        0 |   |   +---S_DB<gst>::seekObj()
+          0,839/   /       10/       0,083863[       0,106052]/       40 |   |   BO_Base::relation(BO_PERSON,guest,0)
+          0,605/   /       10/       0,060528[       0,073191]/       30 |   |   BO_Base::relation(BO_PERSON,getGuestIdents,0)
+          0,525/   /       10/       0,052471[       0,120845]/       30 |   |   BO_Base::relation(BO_PERSON,getLoyalityCards,0)
+          0,314/   /        1/       0,313920[       0,313920]/      102 |   |   BO_Base::relation(BO_RES,travelAgencyContact,0)
+          0,302/   /        1/       0,302384[       0,302384]/       75 |   +---BO_Base::relation(BO_RES,ordererContact,0)
+         28,105/ 95/        1/      28,104995[      28,104995]/      412 +---ServiceInstance::readInput
+         24,956/   /        1/      24,956344[      24,956344]/        0 |   |   S_DB<res>::seekObj()
+          0,575/ 48/        1/       0,575188[       0,575187]/       77 |   +---BO_Transaction::BO_Transaction
+          0,277/   /        1/       0,277368[       0,277368]/       21 |   |   +---BO_Base::cloneTree
+          0,437/   /        1/       0,436664[       0,436664]/       69 |   |   BO_Transaction::~BO_Transaction
+          0,373/   /        1/       0,373310[       0,373310]/       36 |   |   BO_Res::loadFromObject()
+          0,319/ 83/        7/       0,045636[       0,123350]/       10 |   +---S_TimeStamp::getTimeStamp(long hotelNr, const S_String &typ)
+          0,265/   /        7/       0,037868[       0,096787]/        0 |   |   +---S_DB<htxt>::seek()
+          2,358/   /       12/       0,196518[       0,953008]/        0 |   Intercept::WriteFile(16[])
+          0,837/ 71/        1/       0,837020[       0,837020]/      153 +---ServiceInstance::invokeSequence
+          0,590/ 58/        1/       0,590385[       0,590385]/       82 |   +---BO_Transaction::BO_Transaction
+          0,342/   /        1/       0,342165[       0,342165]/       27 |   |   +---BO_Base::cloneTree
+S_DBDriver
+index:	92 (13633)
+first:	1 (43)
+start:	195 (9142)
+seek:	135 (33339)
+next:	492 (23957)
+prev:	2 (13)
+lock:	0 (9)
+unLock:	0 (6)
+insert:	0 (2)
+remove:	0 (2)
+read:	815 (65200)
+bytes read:	596275 (81165674)
+bytes written:	0 (8542)
+constructs:	19 (361)
+destructs:	18 (305)
+Access per table
+    grp             : 312      dbfields        : 239      precalcdata     : 56       
+    prefix          : 48       gst             : 42       stka            : 26       
+    res             : 24       gpo             : 22       blobhead        : 20       
+    txt             : 18       pre2            : 9        reshis          : 5        
+    regpath         : 2        ryth            : 1        dbtables        : 1        
+VALIDATION
+Hits   : 494 Records [234996]
+detailed info on hit records:
+dbfields/289:238 dbtables/288:1 grp/24:180 lsttxt/42:1 pre2/160:8 precalcdata/236:29 reshis/95:2 rgpo/23:11 ryth/79:1 stka/78:23
+Misses : 194 Records [127129]
+detailed info on missed records:
+blobhead/104:20 dbfields/289:1 grp/24:82 pre2/160:1 precalcdata/236:27 prefix/119:48 reshis/95:1 rgpo/23:11 stka/78:3
+STRINGS
+33720450 strings constructed
+31081651 strings destructed
+2638799 strings active
+
+10555196 strings memory
+
+5065150 buffer allocations
+4587576 buffer freed
+ 477574 buffers active
+
+13701526 maximum StringHeap size
+13550868 current StringHeap size
+Number of current BO_SubjectBase objects  : 983
+Number of current BO_ObserverBase objects : 0
+Next subject-id				  : 23031]]></PerformanceLog>
+            <MSG-LIST>
+               <MSG-ENTRY>
+                  <MSG-LEVEL>WARNING</MSG-LEVEL>
+                  <MSG-CLASS>interfaceserver</MSG-CLASS>
+                  <MSG-NO>9001</MSG-NO>
+                  <MSG-TEXT>This service is deprecated. Please use S_RESERVATION_GET_V008.</MSG-TEXT>
+                  <MSG-ENTRY-PARAM-LIST>
+                     <PARAM>
+                        <INDEX>0</INDEX>
+                        <VALUE>S_RESERVATION_GET_V008</VALUE>
+                     </PARAM>
+                  </MSG-ENTRY-PARAM-LIST>
+               </MSG-ENTRY>
+            </MSG-LIST>
+         </Result>
+         <RESERVATION>
+            <RESERVATION-OBJID>356498</RESERVATION-OBJID>
+            <RESERVATION-CENTRALID>332022146830</RESERVATION-CENTRALID>
+            <resno>5398120</resno>
+            <subno>2</subno>
+            <restype>S</restype>
+            <optiontodate/>
+            <cancellationdate>2024-09-03</cancellationdate>
+            <noofrooms>5</noofrooms>
+            <noofnights>3</noofnights>
+            <arrival>2024-10-06</arrival>
+            <arrivaltime/>
+            <departure>2024-10-09</departure>
+            <departuretime/>
+            <gdsresnumber/>
+            <externalid/>
+            <externalkey/>
+            <externalreference>KCW2QS346Z</externalreference>
+            <category>2BRM</category>
+            <ratecategory>2BRM</ratecategory>
+            <ratesegment/>
+            <marketsegment>CS</marketsegment>
+            <resmedium/>
+            <ressource>AN</ressource>
+            <channel/>
+            <nn1/>
+            <forecastnoofadults>10</forecastnoofadults>
+            <forecastnoofchildren>0</forecastnoofchildren>
+            <forecastnoofpax>10</forecastnoofpax>
+            <forecastrategross>5909.62</forecastrategross>
+            <forecastratenet>5901.37</forecastratenet>
+            <hasautoservice>0</hasautoservice>
+            <currency/>
+            <commentadditional/>
+            <commenttechnical/>
+            <commentinternet/>
+            <commentcentral/>
+            <commentinvoice/>
+            <noofpax>10</noofpax>
+            <noofchildren>0</noofchildren>
+            <noofadults>10</noofadults>
+            <rateassignedto>1</rateassignedto>
+            <ratesfixed>1</ratesfixed>
+            <paymentinstructions>3</paymentinstructions>
+            <ORDERER>
+               <ORDERER-OBJID>574850</ORDERER-OBJID>
+               <ORDERER-CENTRALID>475121035022</ORDERER-CENTRALID>
+               <name1>Travel Beyond - Inrockwe</name1>
+               <name2>KCW2QS346Z</name2>
+               <country>AU</country>
+               <subcountry>QLD</subcountry>
+               <postcode>.</postcode>
+               <city/>
+               <street/>
+               <phone>.</phone>
+               <email1>to_be_completed</email1>
+               <mobile1/>
+               <hqmatchadm/>
+               <hqmatchisn/>
+               <hqmatchsm/>
+               <matchcode>KCW2QS346Z</matchcode>
+               <iata/>
+            </ORDERER>
+            <TRAVELAGENCY>
+               <TRAVELAGENCY-OBJID>161023</TRAVELAGENCY-OBJID>
+               <TRAVELAGENCY-CENTRALID>1063964591</TRAVELAGENCY-CENTRALID>
+               <name1>Travel Beyond -  CREDIT</name1>
+               <name2/>
+               <country>AU</country>
+               <subcountry>NSW</subcountry>
+               <postcode>2009</postcode>
+               <city>Pyrmont</city>
+               <street>6/37-69 Union Street</street>
+               <phone>.</phone>
+               <email1>accounts@travelbeyond.com.au</email1>
+               <mobile1/>
+               <hqmatchadm/>
+               <hqmatchisn/>
+               <hqmatchsm/>
+               <matchcode/>
+               <iata>02362006</iata>
+            </TRAVELAGENCY>
+            <RESERVATIONPACKAGES>
+               <RESERVATIONPACKAGE>
+                  <RESERVATIONPACKAGE-OBJID>12648610</RESERVATIONPACKAGE-OBJID>
+                  <service>GRO</service>
+                  <datefrom>2024-10-06</datefrom>
+                  <dateto>2024-10-09</dateto>
+                  <quantity>1</quantity>
+                  <priceperunit>393.97</priceperunit>
+                  <totalprice>393.97</totalprice>
+                  <currency/>
+               </RESERVATIONPACKAGE>
+            </RESERVATIONPACKAGES>
+            <EXTERNALIDS/>
+            <ROOMS>
+               <ROOM>
+                  <ROOMINGLIST-OBJID>582410</ROOMINGLIST-OBJID>
+                  <ROOM-OBJID>0</ROOM-OBJID>
+                  <category>2BRM</category>
+                  <datefrom>2024-10-06</datefrom>
+                  <dateto>2024-10-09</dateto>
+                  <noofpax>2</noofpax>
+                  <noofchildren>0</noofchildren>
+                  <noofadults>2</noofadults>
+                  <noofnights>3</noofnights>
+                  <room/>
+                  <PERSON>
+                     <PERSON-OBJID>582410</PERSON-OBJID>
+                     <persontype>1A</persontype>
+                     <name1>Travel Beyond - Inrockwe</name1>
+                     <name2>KCW2QS346Z</name2>
+                     <sex>0</sex>
+                     <title/>
+                     <birthdate/>
+                     <address/>
+                     <country>AU</country>
+                     <city/>
+                     <street/>
+                     <postcode>.</postcode>
+                     <subcountry>QLD</subcountry>
+                     <marketsegment>CS</marketsegment>
+                     <salutation/>
+                     <email1>to_be_completed</email1>
+                     <mobile1/>
+                     <ratecategory>2BRM</ratecategory>
+                     <datefrom>2024-10-06</datefrom>
+                     <arrivaltime/>
+                     <dateto>2024-10-09</dateto>
+                     <departuretime/>
+                     <vip/>
+                     <vip2/>
+                     <personStatus>ROOMRESERVED</personStatus>
+                     <GUEST-IDS/>
+                     <LOYALTY-CARDS/>
+                     <REGISTRATIONCARD>
+                        <REGISTRATIONCARD-OBJID>582410</REGISTRATIONCARD-OBJID>
+                     </REGISTRATIONCARD>
+                     <PERSONPACKAGES>
+                        <PERSONPACKAGE>
+                           <PERSONPACKAGE-OBJID>12648601</PERSONPACKAGE-OBJID>
+                           <service>GRO</service>
+                           <datefrom>2024-10-06</datefrom>
+                           <dateto>2024-10-09</dateto>
+                           <quantity>1</quantity>
+                           <priceperunit>393.97</priceperunit>
+                           <totalprice>393.97</totalprice>
+                           <currency/>
+                        </PERSONPACKAGE>
+                     </PERSONPACKAGES>
+                  </PERSON>
+                  <PERSON>
+                     <PERSON-OBJID>582413</PERSON-OBJID>
+                     <persontype>1A</persontype>
+                     <name1>Travel Beyond - Inrockwe</name1>
+                     <name2>KCW2QS346Z</name2>
+                     <sex>0</sex>
+                     <title/>
+                     <birthdate/>
+                     <address/>
+                     <country>AU</country>
+                     <city/>
+                     <street/>
+                     <postcode>.</postcode>
+                     <subcountry>QLD</subcountry>
+                     <marketsegment>CS</marketsegment>
+                     <salutation/>
+                     <email1>to_be_completed</email1>
+                     <mobile1/>
+                     <ratecategory>2BRM</ratecategory>
+                     <datefrom>2024-10-06</datefrom>
+                     <arrivaltime/>
+                     <dateto>2024-10-09</dateto>
+                     <departuretime/>
+                     <vip/>
+                     <vip2/>
+                     <personStatus>RESERVED</personStatus>
+                     <GUEST-IDS/>
+                     <LOYALTY-CARDS/>
+                     <REGISTRATIONCARD>
+                        <REGISTRATIONCARD-OBJID>582413</REGISTRATIONCARD-OBJID>
+                     </REGISTRATIONCARD>
+                     <PERSONPACKAGES>
+                        <PERSONPACKAGE>
+                           <PERSONPACKAGE-OBJID>12648602</PERSONPACKAGE-OBJID>
+                           <service>GRO</service>
+                           <datefrom>2024-10-06</datefrom>
+                           <dateto>2024-10-09</dateto>
+                           <quantity>1</quantity>
+                           <priceperunit>0</priceperunit>
+                           <totalprice>0</totalprice>
+                           <currency/>
+                        </PERSONPACKAGE>
+                     </PERSONPACKAGES>
+                  </PERSON>
+               </ROOM>
+               <ROOM>
+                  <ROOMINGLIST-OBJID>582416</ROOMINGLIST-OBJID>
+                  <ROOM-OBJID>0</ROOM-OBJID>
+                  <category>2BRM</category>
+                  <datefrom>2024-10-06</datefrom>
+                  <dateto>2024-10-09</dateto>
+                  <noofpax>2</noofpax>
+                  <noofchildren>0</noofchildren>
+                  <noofadults>2</noofadults>
+                  <noofnights>3</noofnights>
+                  <room/>
+                  <PERSON>
+                     <PERSON-OBJID>582416</PERSON-OBJID>
+                     <persontype>1A</persontype>
+                     <name1>Travel Beyond - Inrockwe</name1>
+                     <name2>KCW2QS346Z</name2>
+                     <sex>0</sex>
+                     <title/>
+                     <birthdate/>
+                     <address/>
+                     <country>AU</country>
+                     <city/>
+                     <street/>
+                     <postcode>.</postcode>
+                     <subcountry>QLD</subcountry>
+                     <marketsegment>CS</marketsegment>
+                     <salutation/>
+                     <email1>to_be_completed</email1>
+                     <mobile1/>
+                     <ratecategory>2BRM</ratecategory>
+                     <datefrom>2024-10-06</datefrom>
+                     <arrivaltime/>
+                     <dateto>2024-10-09</dateto>
+                     <departuretime/>
+                     <vip/>
+                     <vip2/>
+                     <personStatus>ROOMRESERVED</personStatus>
+                     <GUEST-IDS/>
+                     <LOYALTY-CARDS/>
+                     <REGISTRATIONCARD>
+                        <REGISTRATIONCARD-OBJID>582416</REGISTRATIONCARD-OBJID>
+                     </REGISTRATIONCARD>
+                     <PERSONPACKAGES>
+                        <PERSONPACKAGE>
+                           <PERSONPACKAGE-OBJID>12648603</PERSONPACKAGE-OBJID>
+                           <service>GRO</service>
+                           <datefrom>2024-10-06</datefrom>
+                           <dateto>2024-10-09</dateto>
+                           <quantity>1</quantity>
+                           <priceperunit>393.97</priceperunit>
+                           <totalprice>393.97</totalprice>
+                           <currency/>
+                        </PERSONPACKAGE>
+                     </PERSONPACKAGES>
+                  </PERSON>
+                  <PERSON>
+                     <PERSON-OBJID>582409</PERSON-OBJID>
+                     <persontype>1A</persontype>
+                     <name1>Travel Beyond - Inrockwe</name1>
+                     <name2>KCW2QS346Z</name2>
+                     <sex>0</sex>
+                     <title/>
+                     <birthdate/>
+                     <address/>
+                     <country>AU</country>
+                     <city/>
+                     <street/>
+                     <postcode>.</postcode>
+                     <subcountry>QLD</subcountry>
+                     <marketsegment>CS</marketsegment>
+                     <salutation/>
+                     <email1>to_be_completed</email1>
+                     <mobile1/>
+                     <ratecategory>2BRM</ratecategory>
+                     <datefrom>2024-10-06</datefrom>
+                     <arrivaltime/>
+                     <dateto>2024-10-09</dateto>
+                     <departuretime/>
+                     <vip/>
+                     <vip2/>
+                     <personStatus>RESERVED</personStatus>
+                     <GUEST-IDS/>
+                     <LOYALTY-CARDS/>
+                     <REGISTRATIONCARD>
+                        <REGISTRATIONCARD-OBJID>582409</REGISTRATIONCARD-OBJID>
+                     </REGISTRATIONCARD>
+                     <PERSONPACKAGES>
+                        <PERSONPACKAGE>
+                           <PERSONPACKAGE-OBJID>12648604</PERSONPACKAGE-OBJID>
+                           <service>GRO</service>
+                           <datefrom>2024-10-06</datefrom>
+                           <dateto>2024-10-09</dateto>
+                           <quantity>1</quantity>
+                           <priceperunit>0</priceperunit>
+                           <totalprice>0</totalprice>
+                           <currency/>
+                        </PERSONPACKAGE>
+                     </PERSONPACKAGES>
+                  </PERSON>
+               </ROOM>
+               <ROOM>
+                  <ROOMINGLIST-OBJID>582412</ROOMINGLIST-OBJID>
+                  <ROOM-OBJID>0</ROOM-OBJID>
+                  <category>2BRM</category>
+                  <datefrom>2024-10-06</datefrom>
+                  <dateto>2024-10-09</dateto>
+                  <noofpax>2</noofpax>
+                  <noofchildren>0</noofchildren>
+                  <noofadults>2</noofadults>
+                  <noofnights>3</noofnights>
+                  <room/>
+                  <PERSON>
+                     <PERSON-OBJID>582412</PERSON-OBJID>
+                     <persontype>1A</persontype>
+                     <name1>Travel Beyond - Inrockwe</name1>
+                     <name2>KCW2QS346Z</name2>
+                     <sex>0</sex>
+                     <title/>
+                     <birthdate/>
+                     <address/>
+                     <country>AU</country>
+                     <city/>
+                     <street/>
+                     <postcode>.</postcode>
+                     <subcountry>QLD</subcountry>
+                     <marketsegment>CS</marketsegment>
+                     <salutation/>
+                     <email1>to_be_completed</email1>
+                     <mobile1/>
+                     <ratecategory>2BRM</ratecategory>
+                     <datefrom>2024-10-06</datefrom>
+                     <arrivaltime/>
+                     <dateto>2024-10-09</dateto>
+                     <departuretime/>
+                     <vip/>
+                     <vip2/>
+                     <personStatus>ROOMRESERVED</personStatus>
+                     <GUEST-IDS/>
+                     <LOYALTY-CARDS/>
+                     <REGISTRATIONCARD>
+                        <REGISTRATIONCARD-OBJID>582412</REGISTRATIONCARD-OBJID>
+                     </REGISTRATIONCARD>
+                     <PERSONPACKAGES>
+                        <PERSONPACKAGE>
+                           <PERSONPACKAGE-OBJID>12648605</PERSONPACKAGE-OBJID>
+                           <service>GRO</service>
+                           <datefrom>2024-10-06</datefrom>
+                           <dateto>2024-10-09</dateto>
+                           <quantity>1</quantity>
+                           <priceperunit>393.97</priceperunit>
+                           <totalprice>393.97</totalprice>
+                           <currency/>
+                        </PERSONPACKAGE>
+                     </PERSONPACKAGES>
+                  </PERSON>
+                  <PERSON>
+                     <PERSON-OBJID>582415</PERSON-OBJID>
+                     <persontype>1A</persontype>
+                     <name1>Travel Beyond - Inrockwe</name1>
+                     <name2>KCW2QS346Z</name2>
+                     <sex>0</sex>
+                     <title/>
+                     <birthdate/>
+                     <address/>
+                     <country>AU</country>
+                     <city/>
+                     <street/>
+                     <postcode>.</postcode>
+                     <subcountry>QLD</subcountry>
+                     <marketsegment>CS</marketsegment>
+                     <salutation/>
+                     <email1>to_be_completed</email1>
+                     <mobile1/>
+                     <ratecategory>2BRM</ratecategory>
+                     <datefrom>2024-10-06</datefrom>
+                     <arrivaltime/>
+                     <dateto>2024-10-09</dateto>
+                     <departuretime/>
+                     <vip/>
+                     <vip2/>
+                     <personStatus>RESERVED</personStatus>
+                     <GUEST-IDS/>
+                     <LOYALTY-CARDS/>
+                     <REGISTRATIONCARD>
+                        <REGISTRATIONCARD-OBJID>582415</REGISTRATIONCARD-OBJID>
+                     </REGISTRATIONCARD>
+                     <PERSONPACKAGES>
+                        <PERSONPACKAGE>
+                           <PERSONPACKAGE-OBJID>12648606</PERSONPACKAGE-OBJID>
+                           <service>GRO</service>
+                           <datefrom>2024-10-06</datefrom>
+                           <dateto>2024-10-09</dateto>
+                           <quantity>1</quantity>
+                           <priceperunit>0</priceperunit>
+                           <totalprice>0</totalprice>
+                           <currency/>
+                        </PERSONPACKAGE>
+                     </PERSONPACKAGES>
+                  </PERSON>
+               </ROOM>
+               <ROOM>
+                  <ROOMINGLIST-OBJID>582408</ROOMINGLIST-OBJID>
+                  <ROOM-OBJID>0</ROOM-OBJID>
+                  <category>2BRM</category>
+                  <datefrom>2024-10-06</datefrom>
+                  <dateto>2024-10-09</dateto>
+                  <noofpax>2</noofpax>
+                  <noofchildren>0</noofchildren>
+                  <noofadults>2</noofadults>
+                  <noofnights>3</noofnights>
+                  <room/>
+                  <PERSON>
+                     <PERSON-OBJID>582408</PERSON-OBJID>
+                     <persontype>1A</persontype>
+                     <name1>Travel Beyond - Inrockwe</name1>
+                     <name2>KCW2QS346Z</name2>
+                     <sex>0</sex>
+                     <title/>
+                     <birthdate/>
+                     <address/>
+                     <country>AU</country>
+                     <city/>
+                     <street/>
+                     <postcode>.</postcode>
+                     <subcountry>QLD</subcountry>
+                     <marketsegment>CS</marketsegment>
+                     <salutation/>
+                     <email1>to_be_completed</email1>
+                     <mobile1/>
+                     <ratecategory>2BRM</ratecategory>
+                     <datefrom>2024-10-06</datefrom>
+                     <arrivaltime/>
+                     <dateto>2024-10-09</dateto>
+                     <departuretime/>
+                     <vip/>
+                     <vip2/>
+                     <personStatus>ROOMRESERVED</personStatus>
+                     <GUEST-IDS/>
+                     <LOYALTY-CARDS/>
+                     <REGISTRATIONCARD>
+                        <REGISTRATIONCARD-OBJID>582408</REGISTRATIONCARD-OBJID>
+                     </REGISTRATIONCARD>
+                     <PERSONPACKAGES>
+                        <PERSONPACKAGE>
+                           <PERSONPACKAGE-OBJID>12648607</PERSONPACKAGE-OBJID>
+                           <service>GRO</service>
+                           <datefrom>2024-10-06</datefrom>
+                           <dateto>2024-10-09</dateto>
+                           <quantity>1</quantity>
+                           <priceperunit>393.97</priceperunit>
+                           <totalprice>393.97</totalprice>
+                           <currency/>
+                        </PERSONPACKAGE>
+                     </PERSONPACKAGES>
+                  </PERSON>
+                  <PERSON>
+                     <PERSON-OBJID>582411</PERSON-OBJID>
+                     <persontype>1A</persontype>
+                     <name1>Travel Beyond - Inrockwe</name1>
+                     <name2>KCW2QS346Z</name2>
+                     <sex>0</sex>
+                     <title/>
+                     <birthdate/>
+                     <address/>
+                     <country>AU</country>
+                     <city/>
+                     <street/>
+                     <postcode>.</postcode>
+                     <subcountry>QLD</subcountry>
+                     <marketsegment>CS</marketsegment>
+                     <salutation/>
+                     <email1>to_be_completed</email1>
+                     <mobile1/>
+                     <ratecategory>2BRM</ratecategory>
+                     <datefrom>2024-10-06</datefrom>
+                     <arrivaltime/>
+                     <dateto>2024-10-09</dateto>
+                     <departuretime/>
+                     <vip/>
+                     <vip2/>
+                     <personStatus>RESERVED</personStatus>
+                     <GUEST-IDS/>
+                     <LOYALTY-CARDS/>
+                     <REGISTRATIONCARD>
+                        <REGISTRATIONCARD-OBJID>582411</REGISTRATIONCARD-OBJID>
+                     </REGISTRATIONCARD>
+                     <PERSONPACKAGES>
+                        <PERSONPACKAGE>
+                           <PERSONPACKAGE-OBJID>12648608</PERSONPACKAGE-OBJID>
+                           <service>GRO</service>
+                           <datefrom>2024-10-06</datefrom>
+                           <dateto>2024-10-09</dateto>
+                           <quantity>1</quantity>
+                           <priceperunit>0</priceperunit>
+                           <totalprice>0</totalprice>
+                           <currency/>
+                        </PERSONPACKAGE>
+                     </PERSONPACKAGES>
+                  </PERSON>
+               </ROOM>
+               <ROOM>
+                  <ROOMINGLIST-OBJID>582414</ROOMINGLIST-OBJID>
+                  <ROOM-OBJID>0</ROOM-OBJID>
+                  <category>2BRM</category>
+                  <datefrom>2024-10-06</datefrom>
+                  <dateto>2024-10-09</dateto>
+                  <noofpax>2</noofpax>
+                  <noofchildren>0</noofchildren>
+                  <noofadults>2</noofadults>
+                  <noofnights>3</noofnights>
+                  <room/>
+                  <PERSON>
+                     <PERSON-OBJID>582414</PERSON-OBJID>
+                     <persontype>1A</persontype>
+                     <name1>Travel Beyond - Inrockwe</name1>
+                     <name2>KCW2QS346Z</name2>
+                     <sex>0</sex>
+                     <title/>
+                     <birthdate/>
+                     <address/>
+                     <country>AU</country>
+                     <city/>
+                     <street/>
+                     <postcode>.</postcode>
+                     <subcountry>QLD</subcountry>
+                     <marketsegment>CS</marketsegment>
+                     <salutation/>
+                     <email1>to_be_completed</email1>
+                     <mobile1/>
+                     <ratecategory>2BRM</ratecategory>
+                     <datefrom>2024-10-06</datefrom>
+                     <arrivaltime/>
+                     <dateto>2024-10-09</dateto>
+                     <departuretime/>
+                     <vip/>
+                     <vip2/>
+                     <personStatus>ROOMRESERVED</personStatus>
+                     <GUEST-IDS/>
+                     <LOYALTY-CARDS/>
+                     <REGISTRATIONCARD>
+                        <REGISTRATIONCARD-OBJID>582414</REGISTRATIONCARD-OBJID>
+                     </REGISTRATIONCARD>
+                     <PERSONPACKAGES>
+                        <PERSONPACKAGE>
+                           <PERSONPACKAGE-OBJID>12648609</PERSONPACKAGE-OBJID>
+                           <service>GRO</service>
+                           <datefrom>2024-10-06</datefrom>
+                           <dateto>2024-10-09</dateto>
+                           <quantity>1</quantity>
+                           <priceperunit>393.97</priceperunit>
+                           <totalprice>393.97</totalprice>
+                           <currency/>
+                        </PERSONPACKAGE>
+                     </PERSONPACKAGES>
+                  </PERSON>
+                  <PERSON>
+                     <PERSON-OBJID>582407</PERSON-OBJID>
+                     <persontype>1A</persontype>
+                     <name1>Travel Beyond - Inrockwe</name1>
+                     <name2>KCW2QS346Z</name2>
+                     <sex>0</sex>
+                     <title/>
+                     <birthdate/>
+                     <address/>
+                     <country>AU</country>
+                     <city/>
+                     <street/>
+                     <postcode>.</postcode>
+                     <subcountry>QLD</subcountry>
+                     <marketsegment>CS</marketsegment>
+                     <salutation/>
+                     <email1>to_be_completed</email1>
+                     <mobile1/>
+                     <ratecategory>2BRM</ratecategory>
+                     <datefrom>2024-10-06</datefrom>
+                     <arrivaltime/>
+                     <dateto>2024-10-09</dateto>
+                     <departuretime/>
+                     <vip/>
+                     <vip2/>
+                     <personStatus>RESERVED</personStatus>
+                     <GUEST-IDS/>
+                     <LOYALTY-CARDS/>
+                     <REGISTRATIONCARD>
+                        <REGISTRATIONCARD-OBJID>582407</REGISTRATIONCARD-OBJID>
+                     </REGISTRATIONCARD>
+                     <PERSONPACKAGES>
+                        <PERSONPACKAGE>
+                           <PERSONPACKAGE-OBJID>12648611</PERSONPACKAGE-OBJID>
+                           <service>GRO</service>
+                           <datefrom>2024-10-06</datefrom>
+                           <dateto>2024-10-09</dateto>
+                           <quantity>1</quantity>
+                           <priceperunit>0</priceperunit>
+                           <totalprice>0</totalprice>
+                           <currency/>
+                        </PERSONPACKAGE>
+                     </PERSONPACKAGES>
+                  </PERSON>
+               </ROOM>
+            </ROOMS>
+            <DEPOSIT>
+               <AGREEMENT1>
+                  <duedate/>
+                  <amount>0</amount>
+               </AGREEMENT1>
+               <AGREEMENT2>
+                  <duedate/>
+                  <amount>0</amount>
+               </AGREEMENT2>
+               <AGREEMENT3>
+                  <duedate/>
+                  <amount>0</amount>
+               </AGREEMENT3>
+               <SUMMARY>
+                  <depositdue>0</depositdue>
+                  <depositduedate>2024-09-04</depositduedate>
+                  <depositpayed>0</depositpayed>
+                  <depositpayeddate/>
+                  <depositopen>0</depositopen>
+                  <depositrequired>0</depositrequired>
+               </SUMMARY>
+            </DEPOSIT>
+         </RESERVATION>
+      </S_RESERVATION_GET_V007Response>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

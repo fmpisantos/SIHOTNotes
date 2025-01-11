@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<SIHOT-Document>
+    <OC>AVR</OC>
+    <TN>123</TN>
+    <FROM>2012-10-10</FROM>
+    <TO>2012-10-12</TO>
+    <CAT>SR</CAT>
+    <ID>13</ID>
+    <IDLIST>
+        <ID>13</ID>
+        <ID>14</ID>
+    </IDLIST>
+    <IDCATLIST>
+        <IDCAT>
+            <ID>13</ID>
+            <CATLIST>
+                <CAT>SR</CAT>
+                <CAT>DR</CAT>
+            </CATLIST>
+        </IDCAT>
+    </IDCATLIST>
+    <FLAGS>SEND-RAW-DATA;SKIP-HIDDEN-ROOM-TYPES</FLAGS>
+</SIHOT-Document>
