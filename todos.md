@@ -1,6 +1,6 @@
 # TODOS:
 
 ## Open:
-- [ ] [# SIXMLRCP](/Users/fmpi.santos/Projects/Notes/SIHOT/todos/TODO.md)
+- [ ] [# SIXMLRCP](./todos/TODO.md)
 
 ## Closed:
